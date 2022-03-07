@@ -49,9 +49,9 @@ additional_links:
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   I am a second-year postgraduate student in Hefei University of Technology.
-
-  Research interests: <mark>Machine Learning</mark> and <mark>Natural Language Processing</mark>
-
+  
+  My research interests includes: <mark>Machine Learning</mark> and <mark>Natural Language Processing</mark>
+  
 content:
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
