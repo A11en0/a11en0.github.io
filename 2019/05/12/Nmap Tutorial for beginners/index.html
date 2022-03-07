@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="Nmap Tutorial for beginnersNmap Scan TypesA variety of scans can be performed using Nmap. Below are the types of scans: TCP SCANA TCP scan is generally used to check and complete a three-way handshake">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A11en0">
+<meta property="og:url" content="http://a11en0.github.io/2019/05/12/Nmap Tutorial for beginners/index.html">
+<meta property="og:site_name" content="A11en0">
+<meta property="og:description" content="Nmap Tutorial for beginnersNmap Scan TypesA variety of scans can be performed using Nmap. Below are the types of scans: TCP SCANA TCP scan is generally used to check and complete a three-way handshake">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-12T08:17:36.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A11en0">
+<meta name="twitter:description" content="Nmap Tutorial for beginnersNmap Scan TypesA variety of scans can be performed using Nmap. Below are the types of scans: TCP SCANA TCP scan is generally used to check and complete a three-way handshake">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://a11en0.github.io/2019/05/12/Nmap Tutorial for beginners/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="A11en0" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/a11en0" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">A11en0</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Enjoy thinking, Enjoy life.</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> KunMing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search">
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech>
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/a11en0" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/a11en0" target="_blank" title="Weibo" data-toggle="tooltip" data-placement="top"><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/" target="_blank" title="Twitter" data-toggle="tooltip" data-placement="top"><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/12/Nmap Tutorial for beginners/" class="title">(no title)</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-12T08:12:55.969Z" itemprop="datePublished">2019-05-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/11/Debian-手动安装JAVA8/" class="title">Debian 手动安装JAVA8</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-11T10:34:19.000Z" itemprop="datePublished">2019-05-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/11/How-to-install-MySQL-in-debian/" class="title">How to install MySQL in debian</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-11T10:22:05.000Z" itemprop="datePublished">2019-05-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/11/翻译-使用Django框架来开发适合移动设备的Web/" class="title">[翻译]使用Django框架来开发适合移动设备的Web</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-11T10:21:40.000Z" itemprop="datePublished">2019-05-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/05/11/配置django开发环境/" class="title">配置django开发环境</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-05-11T10:15:46.000Z" itemprop="datePublished">2019-05-11</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Nmap Tutorial for beginners" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/05/12/Nmap Tutorial for beginners/" class="article-date">
+	  <time datetime="2019-05-12T08:12:55.969Z" itemprop="datePublished">2019-05-12</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/05/12/Nmap Tutorial for beginners/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="Nmap-Tutorial-for-beginners"><a href="#Nmap-Tutorial-for-beginners" class="headerlink" title="Nmap Tutorial for beginners"></a>Nmap Tutorial for beginners</h1><h2 id="Nmap-Scan-Types"><a href="#Nmap-Scan-Types" class="headerlink" title="Nmap Scan Types"></a><strong>Nmap Scan Types</strong></h2><p>A variety of scans can be performed using Nmap. Below are the types of scans:</p>
+<h3 id="TCP-SCAN"><a href="#TCP-SCAN" class="headerlink" title="TCP SCAN"></a><strong>TCP SCAN</strong></h3><p>A TCP scan is generally used to check and complete a three-way handshake between you and a chosen target system. A TCP scan is generally very noisy and can be detected with almost little to no effort. This is “noisy” because the services can log the sender IP address and might trigger Intrusion Detection Systems.</p>
+<h3 id="UDP-SCAN"><a href="#UDP-SCAN" class="headerlink" title="UDP SCAN"></a><strong>UDP SCAN</strong></h3><p>UDP scans are used to check whether there is any UDP port up and listening for incoming requests on the target machine. Unlike TCP, UDP has no mechanism to respond with a positive acknowledgment, so there is always a chance for a false positive in the scan results. However, UDP scans are used to reveal Trojan horses that might be running on UDP ports or even reveal hidden RPC services. This type of scan tends to be quite slow because machines, in general, tend to slow down their responses to this kind of traffic as a precautionary measure.</p>
+<h3 id="SYN-SCAN"><a href="#SYN-SCAN" class="headerlink" title="SYN SCAN"></a><strong>SYN SCAN</strong></h3><p>This is another form of TCP scan. The difference is unlike a normal TCP scan, nmap itself crafts a syn packet, which is the first packet that is sent to establish a TCP connection. What is important to note here is that the connection is never formed, rather the responses to these specially crafted packets are analyzed by Nmap to produce scan results.</p>
+<h3 id="ACK-SCAN"><a href="#ACK-SCAN" class="headerlink" title="ACK SCAN"></a><strong>ACK SCAN</strong></h3><p>ACK scans are used to determine whether a particular port is filtered or not. This proves to be extremely helpful when trying to probe for firewalls and their existing set of rules. Simple packet filtering will allow established connections (packets with the ACK bit set), whereas a more sophisticated stateful firewall might not.</p>
+<h3 id="FIN-SCAN"><a href="#FIN-SCAN" class="headerlink" title="FIN SCAN"></a><strong>FIN SCAN</strong></h3><p>Also a stealthy scan, like the SYN scan, but sends a TCP FIN packet instead. Most but not all computers will send an RST packet (reset packet) back if they get this input, so the FIN scan can show false positives and negatives, but it may get under the radar of some IDS programs and other countermeasures.</p>
+<h3 id="NULL-SCAN"><a href="#NULL-SCAN" class="headerlink" title="NULL SCAN"></a><strong>NULL SCAN</strong></h3><p>Null scans are extremely stealthy scan and what they do is as the name suggests — they set all the header fields to <em>null</em>. Generally, this is not a valid packet and a few targets will not know how to deal with such a packet. Such targets are generally some version of windows and scanning them with NULL packets may end up producing unreliable results. On the other hand, when a system is not running windows this can be used as an effective way to get through.</p>
+<h3 id="XMAS-SCAN"><a href="#XMAS-SCAN" class="headerlink" title="XMAS SCAN"></a><strong>XMAS SCAN</strong></h3><p>Just like null scans, these are also stealthy in nature. Computers running windows will not respond to <em>Xmas</em> scans due to the way their TCP stack is implemented. The scan derives its name from the set of flags that are turned on within the packet that is sent out for scanning. XMAS scans are used to manipulate the PSH, URG and FIN flags that can be found in the TCP header.</p>
+<h3 id="RPC-SCAN"><a href="#RPC-SCAN" class="headerlink" title="RPC SCAN"></a><strong>RPC SCAN</strong></h3><p>RPC scans are used to discover machines that respond to Remote Procedure Call services (RPC). RPC allows commands to be run on a certain machine remotely, under a certain set of connections. RPC service can run on an array of different ports, hence, it becomes hard to infer from a normal scan whether RPC services are running or not. It is generally a good idea to run an RPC scan from time to time to find out where you have these services running.</p>
+<p><strong>IDLE SCAN</strong></p>
+<p>IDLE scan is the stealthiest of all scans discussed in this nmap tutorial, as the packets are bounced off an external host. Control over the host is generally not necessary, but the host needs to meet a specific set of conditions. It is one of the more controversial options in Nmap since it only has a use for malicious attacks.</p>
+<h2 id="Nmap-Commands"><a href="#Nmap-Commands" class="headerlink" title="Nmap Commands"></a><strong>Nmap Commands</strong></h2><p>In this section of Nmap Tutorial, I’ll be listing down the various commands you can use in Nmap along with their flag and usage description with an example on how to use it.</p>
+<h2 id="Scanning-Technique"><a href="#Scanning-Technique" class="headerlink" title="Scanning Technique"></a>Scanning Technique</h2><p>-sS TCP syn port scan </p>
+<p>-sT TCP connect port scan</p>
+<p>-sU UPD port scan</p>
+<p>-sA TCP ack port scan</p>
+<p>Exp: </p>
+<p><code>nmap -sS 192.168.1.1</code></p>
+<h2 id="Host-Discovery"><a href="#Host-Discovery" class="headerlink" title="Host Discovery"></a>Host Discovery</h2><p>-Pn only port scan</p>
+<p>-sn only host discover</p>
+<p>-PR arp discovery on a local network</p>
+<p>-n disable DNS resolution</p>
+<p>Exp: </p>
+<p><code>nmap -Pn 192.168.1.1</code></p>
+<h2 id="Service-Version-and-OS-Detection"><a href="#Service-Version-and-OS-Detection" class="headerlink" title="Service Version and OS Detection"></a>Service Version and OS Detection</h2><p>-sV detect the version of services running </p>
+<p>-A aggressive scan</p>
+<p>-O detect operating system of the target</p>
+<p>Exp: </p>
+<p><code>nmap -sV 192.168.1.1</code></p>
+<h2 id="Timing-and-Performance"><a href="#Timing-and-Performance" class="headerlink" title="Timing and Performance"></a>Timing and Performance</h2><p>-T0 paranoid IDS evasion</p>
+<p>-T1 sneaky IDS evasion</p>
+<p>-T2 polite IDS evasion</p>
+<p>-T3 normal IDS evasion</p>
+<p>-T4 aggressive speed scan</p>
+<p>-T5 insane speed scan</p>
+<h2 id="NSE-Scripts"><a href="#NSE-Scripts" class="headerlink" title="NSE Scripts"></a><em>NSE Scripts</em></h2><p>-sC default script scan</p>
+<p>–script banner banner grabbing</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://a11en0.github.io/2019/05/12/Nmap Tutorial for beginners/" title target="_blank" rel="external">http://a11en0.github.io/2019/05/12/Nmap Tutorial for beginners/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/a11en0" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt>
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/a11en0" target="_blank"><span class="text-dark">A11en0</span><small class="ml-1x">Enjoy thinking, Enjoy life.</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/05/11/Debian-手动安装JAVA8/" title="Debian 手动安装JAVA8"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan">
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan">
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class>
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/a11en0" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/a11en0" target="_blank" title="Weibo" data-toggle="tooltip" data-placement="top"><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/" target="_blank" title="Twitter" data-toggle="tooltip" data-placement="top"><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
