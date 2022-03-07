@@ -51,6 +51,8 @@ about_content: | # this will include new lines to allow paragraphs
   I am a second-year postgraduate student in Hefei University of Technology.
   
   My research interests includes: <mark>Machine Learning</mark> and <mark>Natural Language Processing</mark>
+
+  This is just a template page, everything below is not realistic from now on.
   
 content:
   - title: Projects # Title for the section
@@ -104,13 +106,12 @@ content:
     layout: text
     content: | # this will include new lines to allow paragraphs
       Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+      - Go Game
+      - Running 
+      - Music
 
-      Look at this cool image  
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+        #     Look at this cool image  
+        #![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
 # Footer
 footer_show_references: false
