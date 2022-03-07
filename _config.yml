@@ -48,7 +48,8 @@ additional_links:
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  I am a second-year postgraduate student in Hefei University of Technology. [CV-PDF](a11en0.github.io/assets/ "CV.pdf")
+  I am a second-year postgraduate student in Hefei University of Technology. 
+  [[CV-PDF]](/assets/CV.pdf)
 
   My research interests includes: <mark>Multi-Label Learning</mark>, <mark>Weak-Supervised Learning</mark> and <mark>Natural Language Processing</mark>.
 
