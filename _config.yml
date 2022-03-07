@@ -10,6 +10,7 @@ name: Yuhang Ge
 title: Enjoy Thinking!
 email: yuhang@mail.hfut.edu.cn
 website: a11en0.github.io
+pdf: 123
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -109,9 +110,8 @@ content:
       - Go Game
       - Running 
       - Music
-
-        #     Look at this cool image  
-        #![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+#     Look at this cool image  
+#![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
 # Footer
 footer_show_references: false
